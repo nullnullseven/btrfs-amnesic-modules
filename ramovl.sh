@@ -66,7 +66,7 @@ ramroot_main() {
     umount "$NEWROOT" || { echo "umount failed"; return 1; }
 
     mkdir -p /cow
-    mount -n -t tmpfs -o mode=0755,size=100%,nr_inodes=500k,nodev,nosuid,noatime,nodiratime tmpfs /cow \
+    mount -n -t tmpfs -o mode=0755,size=50%,nr_inodes=500k,nodev,nosuid,noatime,nodiratime tmpfs /cow \
         || { echo "tmpfs failed, rolling back"; mount --bind /live/image "$NEWROOT"; return 1; }
     mkdir -p /cow/work /cow/rw
 
