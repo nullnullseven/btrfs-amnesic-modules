@@ -3,6 +3,9 @@ How to enable RAM mode:
 - GRUB: in the menu press e, append  `ramovl`  to the linux line and press Ctrl+X.
 
 Verification on the desktop:
+
 `cat /run/ramroot.log`
+
 `findmnt -no FSTYPE /`       (should be overlay)
+
 `findmnt -no FSTYPE /home`   (overlay, if /home was a separate subvolume or part of the root)
