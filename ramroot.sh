@@ -223,8 +223,8 @@ fi
 cat <<'DONE'
 
 Done. How to enable zram mode:
-  - systemd-boot: press Space in the menu, select an entry, press e, append  zramroot  and press Enter.
-  - GRUB: press e in the menu, append  zramroot  to the linux line, then press Ctrl+X.
+  - systemd-boot: press e, append zramroot and press Enter.
+  - GRUB: press e in the menu, append zramroot to the linux line, then press Ctrl+X.
   Booting will take longer than usual: the entire system is copied to RAM.
   To use a different disk size: zramroot zramroot.size=40   (GB)
 
