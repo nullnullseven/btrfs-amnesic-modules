@@ -9,7 +9,7 @@ How to enable modules:
 
 `zramroot` and `zramroot.size=<GB>` (zram block device)
 
-- systemd-boot: in the menu press Space, select the entry, press e, append  `option` to the end and press Enter.
+- systemd-boot: in the menu press e, append  `option` to the end and press Enter.
 - GRUB: in the menu press e, append  `option`  to the linux line and press Ctrl+X.
 
 Verification on the desktop:
