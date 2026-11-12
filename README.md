@@ -1,11 +1,25 @@
-How to enable RAM mode:
-- systemd-boot: in the menu press Space, select the entry, press e, append  `ramovl`  to the end and press Enter.
-- GRUB: in the menu press e, append  `ramovl`  to the linux line and press Ctrl+X.
+How to enable modules:
+
+- run scripts with `sudo`
+- The scripts install modules with these kernel options:
+
+`ramovl` (overlay in tmpfs),
+
+`diskovl` and `diskovl.size=<GB>` (overlay in dm-crypt container),
+
+`zramroot` and `zramroot.size=<GB>` (zram block device)
+
+- systemd-boot: in the menu press Space, select the entry, press e, append  `option` to the end and press Enter.
+- GRUB: in the menu press e, append  `option`  to the linux line and press Ctrl+X.
 
 Verification on the desktop:
 
-`cat /run/ramroot.log`
+`findmnt -no FSTYPE /`
 
-`findmnt -no FSTYPE /`       (should be overlay)
+`findmnt -no FSTYPE /home`
 
-`findmnt -no FSTYPE /home`   (overlay, if /home was a separate subvolume or part of the root)
+`cat /run/ramroot.log` (logs for `ramovl`)
+
+`cat /run/diskroot.log` (logs for `diskovl`)
+
+`cat /run/zramroot.log` and `sudo zramctl` (logs for `ramovl`)
