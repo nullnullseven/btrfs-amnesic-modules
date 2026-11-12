@@ -147,8 +147,8 @@ fi
 cat <<'DONE'
 
 Done. How to enable RAM mode:
-  - systemd-boot: in the menu press Space, select the entry, press e, append  ramovl  to the end and press Enter.
-  - GRUB: in the menu press e, append  ramovl  to the linux line and press Ctrl+X.
+  - systemd-boot: in the menu press e, append ramovl to the end and press Enter.
+  - GRUB: in the menu press e, append ramovl to the linux line and press Ctrl+X.
 
 Verification on the desktop:
   cat /run/ramroot.log
