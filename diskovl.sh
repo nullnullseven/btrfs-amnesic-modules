@@ -255,8 +255,8 @@ fi
 cat <<'DONE'
 
 Done. How to enable disk upper-layer mode:
-  - systemd-boot: press Space in the menu, select an entry, press e, append  diskovl  and press Enter.
-  - GRUB: press e in the menu, append  diskovl  to the linux line, then press Ctrl+X.
+  - systemd-boot: press e, append diskovl and press Enter.
+  - GRUB: press e in the menu, append diskovl to the linux line, then press Ctrl+X.
   To use a different container size: diskovl diskovl.size=40   (GB)
 
 IMPORTANT: The size must not exceed the available disk space. The file is sparse and only uses
