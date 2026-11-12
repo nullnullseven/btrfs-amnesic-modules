@@ -1,7 +1,7 @@
 How to enable modules:
 
-- run scripts with `sudo`
-- The scripts install modules with these kernel options:
+- disable swap and run scripts with `sudo`
+- scripts install modules with these kernel options:
 
 `ramovl` (overlay in tmpfs),
 
