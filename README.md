@@ -22,4 +22,4 @@ Verification on the desktop:
 
 `cat /run/diskroot.log` (logs for `diskovl`)
 
-`cat /run/zramroot.log` and `sudo zramctl` (logs for `ramovl`)
+`cat /run/zramroot.log` and `sudo zramctl` (logs for `zramroot`)
