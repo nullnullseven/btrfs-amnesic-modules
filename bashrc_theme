@@ -1,0 +1,40 @@
+# .bashrc
+
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+export PATH
+
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+
+# ── Cyber Dark Theme ────────────────────────────────
+HULL='\[\e[38;2;80;100;120m\]'
+PANEL='\[\e[38;2;45;55;70m\]'
+HUD_GREEN='\[\e[38;2;100;255;100m\]'
+HUD_AMBER='\[\e[38;2;255;200;80m\]'
+HUD_RED='\[\e[38;2;255;60;60m\]'
+HUD_BLUE='\[\e[38;2;80;180;255m\]'
+HUD_CYAN='\[\e[38;2;0;255;255m\]'
+HUD_WHITE='\[\e[38;2;220;230;240m\]'
+HUD_DIM='\[\e[38;2;100;110;120m\]'
+RESET='\[\e[0m\]'
+
+__elite_prompt() {
+    local RETVAL=$?
+    local alert=""
+    [[ "$RETVAL" -ne 0 ]] && alert="${HUD_RED}[ALERT]${RESET} "
+
+    PS1=""
+    PS1+="${PANEL}┌${HULL}─[${HUD_AMBER} $(uname -r) ${HULL}]─[${HUD_WHITE} \u ${HULL}]─[ ${HUD_CYAN}$(findmnt -n -o SOURCE /)${HULL} ]${RESET}\n"
+    PS1+="${PANEL}│${RESET} ${HUD_GREEN}SYS${RESET} ${HUD_DIM}>${RESET} ${HUD_GREEN}\w${RESET}\n"
+    PS1+="${PANEL}└${RESET} ${alert}${HUD_AMBER}❯${RESET} "
+
+    return $RETVAL
+}
+
+PROMPT_COMMAND='__elite_prompt'
+set -b
