@@ -23,3 +23,8 @@ Verification on the desktop:
 `cat /run/diskroot.log` (logs for `diskovl`)
 
 `cat /run/zramroot.log` and `sudo zramctl` (logs for `zramroot`)
+
+.bashrc theme:
+
+<img width="795" height="343" alt="1" src="https://github.com/user-attachments/assets/ff05aaf5-9428-4f5f-a8c4-b3918472e0cd" />
+
